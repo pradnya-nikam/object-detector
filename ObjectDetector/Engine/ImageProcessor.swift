@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-struct ImageProcessor {
-  var imageData: ImageData
+class ImageProcessor : ObservableObject {
+//  var imageData: ImageData
+  @Published var objectDetectionResult = ""
   func processImage(image: UIImage) {
-//    Dispatch.
+    print("process image called \(image.debugDescription)")
     processingComplete()
   }
   func processingComplete() {
-    imageData.objectDetectionResult = "Processing Completed. \n 100% Unknown"
+    print("process image complete")
+    self.objectDetectionResult = "Processing Completed. \n 100% Unknown"
   }
 }

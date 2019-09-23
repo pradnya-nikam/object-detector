@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-  @EnvironmentObject var imageData: ImageData
-  @State var showImagePicker: Bool = false
-  @State var image: UIImage? = nil
+  @EnvironmentObject var imageProcessor: ImageProcessor
+  @State private var showImagePicker: Bool = false
+  @State private var image: UIImage? = nil
   
 
     var body: some View {
@@ -24,10 +24,11 @@ struct ContentView: View {
               .scaledToFit()
               .frame(width: geometry.size.width, height: (geometry.size.height/2))
           }
-          if (imageData.objectDetectionResult != "") {
-            Text(imageData.objectDetectionResult)
-          } else {
+        //Detection Result
+          if (imageProcessor.objectDetectionResult.isEmpty) {
             Text("Processing...")
+          } else {
+            Text(imageProcessor.objectDetectionResult)
           }
         }
         //Button
@@ -53,8 +54,7 @@ struct ContentView: View {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//      ContentView(showImagePicker: false, imageData: ImageData())
-      ContentView()
+      ContentView().environmentObject(ImageProcessor())
     }
 }
 #endif
