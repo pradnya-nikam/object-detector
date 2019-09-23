@@ -16,7 +16,6 @@
 		4C440F9423322BBD00F26504 /* ObjectDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440F9323322BBD00F26504 /* ObjectDetectorTests.swift */; };
 		4C440F9F23322BF200F26504 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440F9E23322BF200F26504 /* ImageProcessor.swift */; };
 		4C440FA123322E8E00F26504 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440FA023322E8E00F26504 /* ImagePicker.swift */; };
-		4C85A0B223337F65007FA6A5 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85A0B123337F65007FA6A5 /* ImageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +42,6 @@
 		4C440F9523322BBD00F26504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C440F9E23322BF200F26504 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		4C440FA023322E8E00F26504 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		4C85A0B123337F65007FA6A5 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 		4C440F7B23322BB800F26504 /* ObjectDetector */ = {
 			isa = PBXGroup;
 			children = (
-				4C85A0B023337F56007FA6A5 /* Model */,
 				4C85A0AC23337ED4007FA6A5 /* Delegate */,
 				4C85A0AA23337E76007FA6A5 /* Engine */,
 				4C85A0A923337E6D007FA6A5 /* UI */,
@@ -146,14 +143,6 @@
 				4C440F7E23322BB800F26504 /* SceneDelegate.swift */,
 			);
 			path = Delegate;
-			sourceTree = "<group>";
-		};
-		4C85A0B023337F56007FA6A5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4C85A0B123337F65007FA6A5 /* ImageData.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +251,6 @@
 				4C440FA123322E8E00F26504 /* ImagePicker.swift in Sources */,
 				4C440F9F23322BF200F26504 /* ImageProcessor.swift in Sources */,
 				4C440F8123322BB800F26504 /* ContentView.swift in Sources */,
-				4C85A0B223337F65007FA6A5 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

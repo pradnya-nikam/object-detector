@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class ImageProcessor : ObservableObject {
-//  var imageData: ImageData
   @Published var objectDetectionResult = ""
   func processImage(image: UIImage) {
-    print("process image called \(image.debugDescription)")
+    print("Process image called \(image.debugDescription)")
     processingComplete()
   }
+
   func processingComplete() {
-    print("process image complete")
+    print("Process image complete")
     self.objectDetectionResult = "Processing Completed. \n 100% Unknown"
   }
 }
