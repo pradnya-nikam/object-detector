@@ -16,7 +16,7 @@ class ImageProcessor : ObservableObject {
   @Published var objectDetectionResult = ""
   var objectDetectionModel = MobileNetV2()
   
-  /// - Tag: MLModelSetup
+  /// - Tag: Step 1: Initialise the model
   private lazy var classificationRequest: VNCoreMLRequest = {
     do {
       let model = try VNCoreMLModel(for: MobileNetV2().model)
@@ -31,6 +31,7 @@ class ImageProcessor : ObservableObject {
     }
   }()
   
+  /// - Tag: Step 2: Run the vision request
   func processImage(image: UIImage) {
     print("Process image called \(image.debugDescription)")
     guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from image.") }
@@ -45,6 +46,7 @@ class ImageProcessor : ObservableObject {
     }
   }
 
+  /// - Tag: Step 3: Handle the output
   func processMLResults(fromRequest request: VNRequest, error: Error?) {
     guard let results = request.results else {
       print("Unable to classify image.\n\(error!.localizedDescription)")
