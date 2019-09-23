@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+  
   @EnvironmentObject var imageProcessor: ImageProcessor
+  
   @State private var showImagePicker: Bool = false
   @State private var image: UIImage? = nil
   
-
     var body: some View {
       VStack {
-        //Image
+        //View 1: Image
         if (image != nil) {
           GeometryReader { geometry in
             Image(uiImage: self.image!)
@@ -24,29 +25,33 @@ struct ContentView: View {
               .scaledToFit()
               .frame(width: geometry.size.width, height: (geometry.size.height/2))
           }
-        //Detection Result
+        //View 2: Detection Result
           if (imageProcessor.objectDetectionResult.isEmpty) {
             Text("Processing...")
           } else {
             Text(imageProcessor.objectDetectionResult)
           }
         }
-        //Button
+
+        //View 3: Button
         Button(action: {
           self.showImagePicker = true
         }) {
           Text("Upload Image")
         }
         .sheet(isPresented: $showImagePicker, onDismiss: {
+          //This is only called when the image picker is manually dismissed
           self.showImagePicker = false
-          if(self.image != nil) {
-            self.imageData.image = self.image
-            ImageProcessor(imageData: self.imageData).processImage(image: self.image!)
-          }
         }, content: {
-            ImagePicker(isShown: self.$showImagePicker, uiImage: self.$image)
+          ImagePicker(isShown: self.$showImagePicker, uiImage: self.$image, onDismiss: {
+            //Called when the image picker is programmatically dismissed
+            //for example when an image is chosen
+              self.showImagePicker = false
+              if(self.image != nil) {
+                self.imageProcessor.processImage(image: self.image!)
+              }
+            })
           })
-            
       }
     }
 }
