@@ -14,12 +14,12 @@ import Vision
 class ImageProcessor : ObservableObject {
   
   @Published var objectDetectionResult = ""
-  var objectDetectionModel = MobileNetV2()
+  var objectDetectionModel = MobileNetV2().model
   
   /// - Tag: Step 1: Initialise the model
   private lazy var classificationRequest: VNCoreMLRequest = {
     do {
-      let model = try VNCoreMLModel(for: MobileNetV2().model)
+      let model = try VNCoreMLModel(for: objectDetectionModel)
   
       let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
         self?.processMLResults(fromRequest: request, error: error)
