@@ -19,20 +19,20 @@ struct ContentView: View {
       VStack {
         //View 1: Image
         if (image != nil) {
+          //View 2: Detection Result
+            if (imageProcessor.objectDetectionResult.isEmpty) {
+              Text("Processing...")
+            } else {
+              Text(imageProcessor.objectDetectionResult)
+            }
+          
           GeometryReader { geometry in
             Image(uiImage: self.image!)
               .resizable()
               .scaledToFit()
               .frame(width: geometry.size.width, height: (geometry.size.height/2))
           }
-        //View 2: Detection Result
-          if (imageProcessor.objectDetectionResult.isEmpty) {
-            Text("Processing...")
-          } else {
-            Text(imageProcessor.objectDetectionResult)
-          }
         }
-
         //View 3: Button
         Button(action: {
           self.showImagePicker = true
@@ -45,7 +45,7 @@ struct ContentView: View {
         }, content: {
           ImagePicker(isShown: self.$showImagePicker, uiImage: self.$image, onDismiss: {
             //Called when the image picker is programmatically dismissed
-            //for example when an image is chosen
+            //for example after an image is chosen
               self.showImagePicker = false
               if(self.image != nil) {
                 self.imageProcessor.processImage(image: self.image!)
