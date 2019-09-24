@@ -43,6 +43,7 @@ struct ContentView: View {
           //This is only called when the image picker is manually dismissed
           self.showImagePicker = false
         }, content: {
+          //View 4: Image Picker
           ImagePicker(isShown: self.$showImagePicker, uiImage: self.$image, onDismiss: {
             //Called when the image picker is programmatically dismissed
             //for example after an image is chosen

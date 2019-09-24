@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C40B13D2339B1DA0049FBA5 /* VisionClassificationResponseFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40B13C2339B1DA0049FBA5 /* VisionClassificationResponseFormatter.swift */; };
 		4C440F7D23322BB800F26504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440F7C23322BB800F26504 /* AppDelegate.swift */; };
 		4C440F7F23322BB800F26504 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440F7E23322BB800F26504 /* SceneDelegate.swift */; };
 		4C440F8123322BB800F26504 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C440F8023322BB800F26504 /* ContentView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C40B13C2339B1DA0049FBA5 /* VisionClassificationResponseFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionClassificationResponseFormatter.swift; sourceTree = "<group>"; };
 		4C440F7923322BB800F26504 /* ObjectDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C440F7C23322BB800F26504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C440F7E23322BB800F26504 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C40B1392339A7C60049FBA5 /* MLModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MLModel;
+			sourceTree = "<group>";
+		};
 		4C440F7023322BB800F26504 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4C440F9E23322BF200F26504 /* ImageProcessor.swift */,
+				4C40B13C2339B1DA0049FBA5 /* VisionClassificationResponseFormatter.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -260,6 +270,7 @@
 				4CDD9F972338681400645F1D /* MobileNetV2.mlmodel in Sources */,
 				4C440F7D23322BB800F26504 /* AppDelegate.swift in Sources */,
 				4C440F7F23322BB800F26504 /* SceneDelegate.swift in Sources */,
+				4C40B13D2339B1DA0049FBA5 /* VisionClassificationResponseFormatter.swift in Sources */,
 				4C440FA123322E8E00F26504 /* ImagePicker.swift in Sources */,
 				4C440F9F23322BF200F26504 /* ImageProcessor.swift in Sources */,
 				4C440F8123322BB800F26504 /* ContentView.swift in Sources */,
