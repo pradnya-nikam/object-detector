@@ -13,11 +13,9 @@ class ImageProcessor : ObservableObject {
   @Published var objectDetectionResult = ""
   func processImage(image: UIImage) {
     print("Process image called \(image.debugDescription)")
-    processingComplete()
+    self.objectDetectionResult = "Processing"
   }
 
   func processingComplete() {
-    print("Process image complete")
-    self.objectDetectionResult = "Processing Completed. \n 100% Unknown"
   }
 }
