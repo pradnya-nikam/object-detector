@@ -34,6 +34,8 @@ class ImageProcessor : ObservableObject {
   /// - Tag: Step 2: Run the vision request
   func processImage(image: UIImage) {
     print("Process image called \(image.debugDescription)")
+    self.objectDetectionResult = "Processing"
+
     guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from image.") }
     let handler = VNImageRequestHandler(ciImage: ciImage, orientation: CGImagePropertyOrientation.up)
     do {
@@ -75,12 +77,5 @@ func processingComplete(objectDetectionArray: [VNClassificationObservation]) {
       objectDetectionResult.append("\n" + secondDetection.formattedString())
     }
     self.objectDetectionResult = objectDetectionResult
-  }
-}
-
-extension VNClassificationObservation {
-  func formattedString() -> String {
-    return String(
-    format:"\(self.identifier): %.2f%%", (self.confidence * 100))
   }
 }
