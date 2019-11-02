@@ -22,7 +22,7 @@ https://medium.com/@pradnya_nikam/incorporating-machine-learning-into-ios-apps-a
 
 
 
-<h2>App functionality:
+<h2>App functionality:</h2>
 
 This app uses a coreML model to detect the species of an animal when a photo is uploaded
 
